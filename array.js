@@ -25,6 +25,13 @@ var unames = names.filter(function(value, index, arr) {
 }, unames);
 console.log("Removing duplicate from [\"John\",\"Mery\",\"Lucy\",\"Adam\",\"John\",\"john\",\"Adam\"] : \n" + unames);
 
+// array filter example... printing only even numbers
+var arr= [1,2,3,4,5,6,7,8,9,10];
+var filterArr = arr.filter(function(elementValue, elementIndex, arr){
+  return elementValue % 2 == 0 ? true : false ;
+}, filterArr);
+console.log(filterArr);
+
 /*******************************************************************************************/
 
 // array splice example
