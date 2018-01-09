@@ -1,14 +1,14 @@
 "use strict"
 
 // code to create 2 two diamentional array and sum of both Array
-var arr1 = getTwoDiamentionalArr(3,3);
+var arr1 = getTwoDimensionalArr(3,3);
 populateArr(arr1, 1, "asc");// populate array 1,2,3, .... 9
 document.write("<br/>");
-var arr2 = getTwoDiamentionalArr(3,3); // populate array 9,8,7....1
+var arr2 = getTwoDimensionalArr(3,3); // populate array 9,8,7....1
 populateArr(arr2, 9, "desc");
 
 // define two diamentional array to hold sum of arr1 and arr2
-var arrsum = getTwoDiamentionalArr(3,3);
+var arrsum = getTwoDimensionalArr(3,3);
 for( var i = 0; i < 3; i++ ) {
   for( var j = 0; j < 3; j++ )
     arrsum[i][j] = arr1[i][j] + arr2[i][j];
@@ -16,6 +16,15 @@ for( var i = 0; i < 3; i++ ) {
 document.write("<br/>");
 printArr(arrsum);
 console.log("Sum of Array : \n" + arrsum);
+/*******************************************************************************************/
+
+// code to remove duplicate values in array using filter
+var names = ["John","Mery","Lucy","Adam","John","john","Adam"];
+var unames = names.filter(function(value, index, arr) {
+  return names.indexOf(value) == index;
+}, unames);
+console.log("Removing duplicate from [\"John\",\"Mery\",\"Lucy\",\"Adam\",\"John\",\"john\",\"Adam\"] : \n" + unames);
+
 /*******************************************************************************************/
 
 // array splice example
@@ -72,7 +81,7 @@ function printArray(array) {
 }
 
 //function to get two diamentional array
-function getTwoDiamentionalArr(rows = 3, columns =3) {
+function getTwoDimensionalArr(rows = 3, columns =3) {
   var arr = new Array(rows);
   for( var i = 0; i < rows; i++ )
     for( var j = 0; j < columns; j++ )
