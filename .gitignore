@@ -1,6 +1,9 @@
 .gradle
 /build/
 
+# Ignore tern package config file
+.tern-project
+
 # Ignore Gradle GUI config
 gradle-app.setting
 
