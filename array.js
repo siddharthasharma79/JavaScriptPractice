@@ -1,5 +1,20 @@
 "use strict"
 
+// Array contains override
+Array.prototype.contains = function (element) {
+  var count = 0;
+  for(var i = 0 ; i < this.length; i++) {
+    if( element == this[i])
+      count++;
+    }
+    return count;
+}
+var names = ["John","Mery","Lucy","Adam","John","john","Adam"];
+console.log(names);
+console.log("Count of \"John\" : " + names.contains("John"));
+
+/*******************************************************************************************/
+
 // code to create 2 two diamentional array and sum of both Array
 var arr1 = getTwoDimensionalArr(3,3);
 populateArr(arr1, 1, "asc");// populate array 1,2,3, .... 9
@@ -16,6 +31,7 @@ for( var i = 0; i < 3; i++ ) {
 document.write("<br/>");
 printArr(arrsum);
 console.log("Sum of Array : \n" + arrsum);
+
 /*******************************************************************************************/
 
 // code to remove duplicate values in array using filter
