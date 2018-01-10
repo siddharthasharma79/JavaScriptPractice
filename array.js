@@ -1,5 +1,37 @@
 "use strict"
 
+// closures (nested function) example
+var globalvar = "Global Variable String";
+function addNumbers(firstNumber, secondNumber) { // outer function
+
+  var result = "Sum of numbers : ";
+
+  // function add having access to outer global variables, function variables and parameters
+  function add() { // inner function
+    document.write(globalvar + "<br/>");
+    console.log(globalvar);
+    return result + (firstNumber + secondNumber);
+  }
+  // simple returning
+  return add();
+
+  // function expression returning defination of add function
+  //return add;
+}
+/*** simple execution when returning "add()"" ***/
+ var output = addNumbers(10,20);
+
+/*** function execution when return only "add" first way ***/
+//var myFunc = addNumbers(10,20);
+//var output = myFunc();
+
+/*** function execution when return only "add" second way ***/
+//var output = addNumbers(10,20)();
+
+document.write(output);
+console.log(output);
+/*******************************************************************************************/
+
 // Array contains override
 Array.prototype.contains = function (element) {
   var count = 0;
@@ -10,6 +42,9 @@ Array.prototype.contains = function (element) {
     return count;
 }
 var names = ["John","Mery","Lucy","Adam","John","john","Adam"];
+document.write("<br/>" + names);
+document.write("Count of \"John\" : " + names.contains("John") + "<br/>");
+
 console.log(names);
 console.log("Count of \"John\" : " + names.contains("John"));
 
