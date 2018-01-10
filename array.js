@@ -30,6 +30,18 @@ function addNumbers(firstNumber, secondNumber) { // outer function
 
 document.write(output);
 console.log(output);
+
+// counting page click example
+// use closures with two anonums fucntion. Outer function is self invoking
+var clickCountIncrement = (function() {
+  var clickCount = 0;
+  return function(){
+      ++clickCount;
+      console.log(clickCount);
+      return clickCount;
+  }
+}());
+
 /*******************************************************************************************/
 
 // Array contains override
